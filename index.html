@@ -13,7 +13,20 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
-	<body>
+	<body onmouseover="playMusic()">
+		<audio id="divAudio">
+			<source
+				src="/resources/music/Eon - Ambient Sci Fi Music - (royalty free).mp3"
+				type="audio/mp3"
+			/>
+		</audio>
+
+		<script>
+			var vAudio = document.getElementById("divAudio");
+			function playMusic() {
+				vAudio.play();
+			}
+		</script>
 		<nav id="topbar">
 			<div id="topbarbackground"></div>
 			<div id="slidemenu">
