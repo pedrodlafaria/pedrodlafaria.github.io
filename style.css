@@ -1,0 +1,272 @@
+:root {
+	--number-of-labels: 4;
+	--topbar-height: 90px;
+	--slidemenu-min-width: 400px;
+	--label-width: 30px;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+}
+
+@keyframes slide-from-top {
+	0% {
+		top: calc(-1 * var(--topbar-height));
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+#topbar {
+	height: var(--topbar-height);
+	width: 100vw;
+	position: fixed;
+	top: calc(-1 * var(--topbar-height));
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	animation-name: slide-from-top;
+	animation-duration: 1.5s;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+#topbarbackground {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(/resources/images/backgrounds/diamond.png);
+	background-size: 80% 400%;
+}
+
+#slidemenu {
+	height: 100%;
+	min-width: var(--slidemenu-min-width);
+	width: 40%;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.item {
+	display: none;
+}
+
+.labelcontainer {
+	height: 40%;
+	width: calc(100% / 4);
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slidemenu label {
+	width: var(--label-width);
+	height: 100%;
+	display: flex;
+	padding-top: 15px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	font-family: arial, sans-serif;
+	color: rgb(0, 0, 0);
+	opacity: 0.2;
+	transition: all 300ms linear;
+}
+
+#slidemenu label:hover {
+	cursor: pointer;
+	opacity: 0.4;
+	transition: all 100ms linear;
+}
+
+#slidemenu label .icon {
+	height: 75%;
+	width: attr(height);
+	border: solid 2px rgb(3, 3, 3);
+	border-radius: 50%;
+}
+
+#slidemenu span {
+	line-height: 200%;
+}
+
+/*Toggle*/
+
+#slidemenu .item:checked + .labelcontainer label {
+	opacity: 1;
+	transition: all 300ms linear;
+}
+
+/*Bar Style*/
+
+#slider {
+	width: 100%;
+	height: 5px;
+	display: block;
+	background: #ccc;
+	margin-top: calc(0.3 * var(--topbar-height));
+	border-radius: 5px;
+}
+
+#slider #bar {
+	width: calc(100% / var(--number-of-labels));
+	height: 5px;
+	background: #333;
+	border-radius: 5px;
+}
+
+/*Animations*/
+#slider #bar {
+	transition: all 300ms linear;
+	-webkit-transition: all 300ms linear;
+	-moz-transition: all 300ms linear;
+}
+
+#slidemenu #item1:checked ~ #slider #bar {
+	margin-left: 0;
+}
+
+#slidemenu #item2:checked ~ #slider #bar {
+	margin-left: 25%;
+}
+
+#slidemenu #item3:checked ~ #slider #bar {
+	margin-left: 50%;
+}
+
+#slidemenu #item4:checked ~ #slider #bar {
+	margin-left: 75%;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#backgroundcontainer {
+	width: 100vw;
+	height: calc(100vh - var(--topbar-height));
+	position: absolute;
+	top: var(--topbar-height);
+	display: flex;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	opacity: 0;
+	animation-name: fade-in;
+	animation-duration: 4s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+#homepage {
+	height: 100%;
+	flex: 0 0 100%;
+	background-image: url(/resources/images/backgrounds/purplenova.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	scroll-snap-align: start;
+	/* color: white; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-family: "Yellowtail", sans-serif;
+}
+
+.neonText {
+	color: #fff;
+	text-shadow: 0 0 7px #fff, 0 0 10px #fff;
+}
+
+#homepage h1 {
+	width: 100%;
+	height: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	opacity: 0;
+	animation: fade-in;
+	animation-duration: 4s;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+}
+
+#homepage h2 {
+	width: 100%;
+	height: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	opacity: 0;
+	animation: fade-in;
+	animation-duration: 4s;
+	animation-delay: 6s;
+	animation-fill-mode: forwards;
+}
+
+#homepage h3 {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 200px;
+	opacity: 0;
+	animation: fade-in;
+	animation-duration: 4s;
+	animation-delay: 10s;
+	animation-fill-mode: forwards;
+}
+
+#biopage {
+	background-image: url(/resources/images/backgrounds/fluidglass1.jpeg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	flex: 0 0 100%;
+	background-repeat: no-repeat;
+	scroll-snap-align: start;
+}
+
+#projectspage {
+	background-image: url(/resources/images/backgrounds/fire.jpeg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	flex: 0 0 100%;
+	background-repeat: no-repeat;
+	scroll-snap-align: start;
+}
+
+#blogpage {
+	background-image: url(/resources/images/backgrounds/water.jpeg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	flex: 0 0 100%;
+	background-repeat: no-repeat;
+	scroll-snap-align: start;
+}

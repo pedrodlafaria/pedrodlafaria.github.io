@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Yellowtail:400"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<nav id="topbar">
+			<div id="topbarbackground"></div>
+			<div id="slidemenu">
+				<input
+					type="radio"
+					name="slideItem"
+					id="item1"
+					class="item"
+					checked
+					onclick="window.location.href='#homepage'"
+				/>
+				<div class="labelcontainer">
+					<label for="item1">
+						<img class="icon" src="/resources/images/home.svg" />
+						<span>Home</span>
+					</label>
+				</div>
+				<input
+					type="radio"
+					name="slideItem"
+					id="item2"
+					class="item"
+					onclick="window.location.href='#biopage'"
+				/>
+				<div class="labelcontainer">
+					<label for="item2">
+						<img class="icon" src="/resources/images/bio.svg" />
+						<span>Bio</span>
+					</label>
+				</div>
+				<input
+					type="radio"
+					name="slideItem"
+					id="item3"
+					class="item"
+					onclick="window.location.href='#projectspage'"
+				/>
+				<div class="labelcontainer">
+					<label for="item3">
+						<img class="icon" src="/resources/images/projects.svg" />
+						<span>Projects</span>
+					</label>
+				</div>
+				<input
+					type="radio"
+					name="slideItem"
+					id="item4"
+					class="item"
+					onclick="window.location.href='#blogpage'"
+				/>
+				<div class="labelcontainer">
+					<label for="item4">
+						<img class="icon" src="/resources/images/blog.svg" />
+						<span>Blog</span>
+					</label>
+				</div>
+				<div id="slider">
+					<div id="bar"></div>
+				</div>
+			</div>
+		</nav>
+		<div id="backgroundcontainer">
+			<div id="homepage" class="neonText">
+				<h1>Hello! My name is Pedro Faria and I am a software developer.</h1>
+				<h2>Welcome to my website. It is currently under construction.</h2>
+				<h3>Coming Soon...</h3>
+			</div>
+			<div id="biopage">
+				<div id="biopage-info"></div>
+			</div>
+			<div id="projectspage"></div>
+			<div id="blogpage"></div>
+		</div>
+	</body>
+</html>
